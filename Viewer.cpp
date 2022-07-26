@@ -6,7 +6,8 @@
 #include <QPainter>
 #include <QScreen>
 #include <QDebug>
-#include <QX11Info>
+//#include <QX11Info>
+#include <QtGui/private/qtx11extras_p.h>
 #include <QImageReader>
 #include <QGuiApplication>
 #include <QBuffer>
@@ -15,6 +16,8 @@
 #include <QElapsedTimer>
 #include <QTimer>
 #include <QString>
+#include <QFileDevice>
+#include <QFile>
 
 #ifdef DEBUG_LOAD_TIME
 #include <QElapsedTimer>

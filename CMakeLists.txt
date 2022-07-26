@@ -11,10 +11,10 @@ if(NOT MSVC)
     set(CMAKE_CXX_FLAGS_INIT "${CMAKE_CXX_FLAGS_INIT} -O2")
 endif()
 
-find_package(QT NAMES Qt6 Qt5 COMPONENTS Gui X11Extras REQUIRED)
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Gui X11Extras REQUIRED)
+find_package(QT NAMES Qt6 COMPONENTS Gui REQUIRED)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Gui REQUIRED)
 
 add_executable(qeh main.cpp Viewer.cpp Viewer.h)
 
-target_link_libraries(qeh PRIVATE Qt${QT_VERSION_MAJOR}::Gui Qt${QT_VERSION_MAJOR}::X11Extras xcb-icccm xcb)
+target_link_libraries(qeh PRIVATE Qt6::Gui Qt6::GuiPrivate xcb-icccm xcb)
 install(TARGETS qeh)
